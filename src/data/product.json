@@ -1,0 +1,47 @@
+[
+  {
+    "nama": "Strawberry Cream",
+    "harga": 5000,
+    "deskripsi": "Mochi lezat dengan isian coklat yang manis."
+  },
+  {
+    "nama": "Oreo",
+    "harga": 5000,
+    "deskripsi": "Mochi lezat dengan isian coklat yang manis."
+  },
+  {
+    "nama": "Red Velvet",
+    "harga": 5000,
+    "deskripsi": "Mochi lezat dengan isian coklat yang manis."
+  },
+  {
+    "nama": "Cream Cheese",
+    "harga": 5000,
+    "deskripsi": "Mochi dengan topping oero di atasnya."
+  },
+  {
+    "nama": "Taro",
+    "harga": 5000,
+    "deskripsi": "Mochi dengan topping oero di atasnya."
+  },
+  {
+    "nama": "Strawberry Cream",
+    "harga": 5000,
+    "deskripsi": "Mochi dengan topping oero di atasnya."
+  },
+  {
+    "nama": "Mango Cream",
+    "harga": 5000,
+    "deskripsi": "Mochi dengan topping oero di atasnya."
+  },
+  {
+    "nama": "Blueberry",
+    "harga": 5000,
+    "deskripsi": "Mochi dengan topping oero di atasnya."
+  },
+  {
+    "nama": "Durian",
+    "harga": 5000,
+    "deskripsi": "Mochi dengan topping oero di atasnya."
+  }
+]
