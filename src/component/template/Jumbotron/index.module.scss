@@ -1,0 +1,164 @@
+@import "@/mixin.scss";
+
+.c {
+  padding-top: 100px;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  &__h {
+    width: 100%;
+    padding: 40px;
+    font-size: 1.6rem;
+    font-weight: 200;
+    text-align: center;
+  }
+  &__main {
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    &__image {
+      display: block;
+      width: 100%;
+      height: auto;
+      background-size: cover;
+      opacity: 0.8;
+      transform: rotate(-2deg);
+    }
+    &__mochi {
+      position: absolute;
+      border-radius: 5px;
+      top: 40%;
+      left: 50%;
+      translate: -50% -50%;
+      background-color: var(--border);
+      width: 30%;
+      max-width: 500px;
+      min-width: 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      padding-bottom: 20px;
+      &__image {
+        width: 100%;
+        height: auto;
+        background-size: cover;
+        margin-top: -150px;
+      }
+      &__text {
+        display: flex;
+        flex-direction: column;
+        // gap: 5px;
+        align-items: flex-end;
+        color: var(--background);
+        font-size: 1.4rem;
+        font-weight: 200;
+        span {
+          font-weight: 800;
+        }
+        &__desc {
+          font-size: 1rem;
+        }
+      }
+      &__button {
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--background);
+        color: var(--color);
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    }
+    &__divider {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      bottom: 0;
+      height: 20%;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+      );
+    }
+  }
+}
+
+@include break(md) {
+  .c {
+    &__main {
+      &__mochi {
+        &__image {
+          margin-top: -50px;
+        }
+      }
+    }
+  }
+}
+
+@include break(sm) {
+  .c {
+    &__main {
+      &__mochi {
+        width: 250px;
+        &__image {
+          margin-top: -50px;
+        }
+      }
+    }
+  }
+}
+@include break(xs) {
+  .c {
+    &__main {
+      &__image {
+        width: auto;
+        height: 400px;
+      }
+      &__mochi {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        translate: -50% -50%;
+        background-color: var(--border);
+        width: 150px;
+        max-width: 200px;
+        min-width: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        padding-bottom: 20px;
+        &__image {
+          width: 100%;
+          height: auto;
+          background-size: cover;
+          margin-top: -20px;
+        }
+
+        &__button {
+          padding: 5px 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--background);
+          color: var(--color);
+          font-weight: 600;
+          cursor: pointer;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+
+// @include break(xs) {
+//   .c {
+//     &__h {
+//       font-size: 1.2rem;
+//     }
+//   }
+// }
