@@ -26,10 +26,10 @@ export default function Navbar() {
         </div>
         <div className={s.c__w__navs} ref={navsRef}>
           <div className={s.c__w__navs__nav}>
-            <a href="#">Home</a>
-            <a href="#">Menu</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
           </div>
           <div className={s.c__w__navs__option}>
             <div className={s.c__w__navs__option__cart}>

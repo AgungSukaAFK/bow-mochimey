@@ -5,9 +5,102 @@
   align-items: center;
   min-height: 100vh;
   padding-top: 50px;
-  &__header {
-    font-size: 1.4rem;
-    font-weight: 800;
-    text-decoration: underline;
+  padding-bottom: 50px;
+  gap: 20px;
+  &__desc {
+    width: 50%;
+    min-width: 300px;
+    text-align: center;
+  }
+  &__w {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 20px;
+
+    &__card {
+      padding: 20px 10px;
+      padding-top: 30px;
+      min-width: 300px;
+      width: 400px;
+      border: 2px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      &__w {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        &__image {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+        }
+        &__before {
+          position: absolute;
+          width: 80%;
+          height: 80%;
+          top: 0;
+          right: 0;
+          translate: 10% -10%;
+          background-color: var(--alternate);
+        }
+        &__after {
+          position: absolute;
+          width: 80%;
+          height: 80%;
+          bottom: 0;
+          left: 0;
+          translate: -10% 10%;
+          background-color: var(--alternate);
+        }
+      }
+      &__title {
+        margin-top: 20px;
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+      &__price {
+        font-size: 1.2rem;
+      }
+      &__buttons {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        button {
+          padding: 5px 10px;
+          font-size: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          cursor: pointer;
+          transition: 0.2s ease;
+
+          filter: brightness(1);
+          &:hover {
+            filter: brightness(0.8);
+          }
+
+          i {
+            font-size: 1.2rem;
+          }
+        }
+        &__cart {
+          background-color: var(--border);
+          color: var(--background);
+        }
+        &__detail {
+          background-color: var(--alternate);
+          color: var(--color);
+        }
+      }
+    }
   }
 }

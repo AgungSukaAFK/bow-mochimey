@@ -1,10 +1,83 @@
+"use client";
+import Image from "next/image";
 import s from "./index.module.scss";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import products from "@/data/product.json";
+
+import { useContext, useEffect, useState } from "react";
+import DetailProduct from "../DetailProduct";
+import { LangContext } from "@/context/LangContext";
+import SectionHeader from "@/component/ui/SectionHeader";
 
 export default function Menu() {
+  // const [dataMochi, setDataMochi] = useState([]);
+  const [selectedMenu, setSelectedMenu] = useState(null);
+  const { lang } = useContext(LangContext);
+
+  const dataMochi = products[lang];
+
+  useEffect(() => {
+    Aos.init({
+      duration: 500,
+      easing: "ease-in-out",
+      //   once: true,
+    });
+  }, []);
+
   return (
-    <div className={s.c}>
-      <div className={s.c__header}>Menu MochiMey</div>
-      <div>Card container</div>
-    </div>
+    <>
+      {selectedMenu && (
+        <DetailProduct data={selectedMenu} setData={setSelectedMenu} />
+      )}
+      <div className={s.c} id="menu">
+        <SectionHeader>Menu MochiMey</SectionHeader>
+        <div className={s.c__desc}>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil soluta
+          delectus nesciunt labore amet fugiat animi magnam culpa ipsa assumenda
+          molestias similique, unde, illum asperiores consequuntur? Facilis quas
+          necessitatibus nulla!
+        </div>
+        <div className={s.c__w}>
+          {dataMochi.map((mochi, index) => {
+            return (
+              <div
+                key={index}
+                className={s.c__w__card}
+                data-aos="fade-up"
+                data-aos-delay={`${index * 200}`}
+              >
+                <div className={s.c__w__card__w}>
+                  <Image
+                    src={`/${mochi.thumbnail}`}
+                    width={200}
+                    height={200}
+                    alt="Mochi Picture"
+                    className={s.c__w__card__w__image}
+                  />
+                  <div className={s.c__w__card__w__before}></div>
+                  <div className={s.c__w__card__w__after}></div>
+                </div>
+                <div className={s.c__w__card__title}>{mochi.nama}</div>
+                <div className={s.c__w__card__price}>
+                  Rp. {mochi.harga.toLocaleString("id-ID")}
+                </div>
+                <div className={s.c__w__card__buttons}>
+                  <button className={s.c__w__card__buttons__cart}>
+                    <i className="bx bx-cart-download"></i> Tambah ke keranjang
+                  </button>
+                  <button
+                    className={s.c__w__card__buttons__detail}
+                    onClick={() => setSelectedMenu(mochi)}
+                  >
+                    <i className="bx bx-search-alt"></i>
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </>
   );
 }

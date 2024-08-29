@@ -3,7 +3,7 @@ import s from "./index.module.scss";
 
 export default function Jumbotron() {
   return (
-    <div className={s.c}>
+    <div className={s.c} id="home">
       <div className={s.c__h}>DAIFUKU MOCHI LEMBUT, MANIS DAN LEZAT!</div>
       <div className={s.c__main}>
         <Image
@@ -29,7 +29,7 @@ export default function Jumbotron() {
             </div>
             <div className={s.c__main__mochi__text__desc}>by Devita</div>
           </div>
-          <a href="#" className={s.c__main__mochi__button}>
+          <a href="#menu" className={s.c__main__mochi__button}>
             Lihat Menu Kami
           </a>
         </div>

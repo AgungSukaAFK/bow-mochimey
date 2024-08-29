@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.scss";
 import LangContextProvider from "@/context/LangContext";
 
+
 const inter = Inter({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
@@ -13,6 +14,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+ 
   return (
     <html lang="en">
       <head>

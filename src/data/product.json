@@ -1,47 +1,132 @@
-[
-  {
-    "nama": "Strawberry Cream",
-    "harga": 5000,
-    "deskripsi": "Mochi lezat dengan isian coklat yang manis."
-  },
-  {
-    "nama": "Oreo",
-    "harga": 5000,
-    "deskripsi": "Mochi lezat dengan isian coklat yang manis."
-  },
-  {
-    "nama": "Red Velvet",
-    "harga": 5000,
-    "deskripsi": "Mochi lezat dengan isian coklat yang manis."
-  },
-  {
-    "nama": "Cream Cheese",
-    "harga": 5000,
-    "deskripsi": "Mochi dengan topping oero di atasnya."
-  },
-  {
-    "nama": "Taro",
-    "harga": 5000,
-    "deskripsi": "Mochi dengan topping oero di atasnya."
-  },
-  {
-    "nama": "Strawberry Cream",
-    "harga": 5000,
-    "deskripsi": "Mochi dengan topping oero di atasnya."
-  },
-  {
-    "nama": "Mango Cream",
-    "harga": 5000,
-    "deskripsi": "Mochi dengan topping oero di atasnya."
-  },
-  {
-    "nama": "Blueberry",
-    "harga": 5000,
-    "deskripsi": "Mochi dengan topping oero di atasnya."
-  },
-  {
-    "nama": "Durian",
-    "harga": 5000,
-    "deskripsi": "Mochi dengan topping oero di atasnya."
-  }
-]
+{
+  "english": [
+    {
+      "id": 1,
+      "nama": "Strawberry Cream",
+      "harga": 5000,
+      "deskripsi": "Enjoy the softness of mochi with a filling of fresh and sweet strawberry cream, combined with a smooth chocolate flavor in every bite.",
+      "thumbnail": "Mangga.jpg"
+    },
+    {
+      "id": 2,
+      "nama": "Oreo",
+      "harga": 5000,
+      "deskripsi": "Experience the richness of mochi filled with crunchy Oreo pieces, enveloped in a creamy chocolate layer that tantalizes your taste buds.",
+      "thumbnail": "Mangga.jpg"
+    },
+    {
+      "id": 3,
+      "nama": "Red Velvet",
+      "harga": 5000,
+      "deskripsi": "Indulge in luxurious mochi with a melting chocolate cream filling, paired with a soft and tempting red velvet touch.",
+      "thumbnail": "Mangga.jpg"
+    },
+    {
+      "id": 4,
+      "nama": "Cream Cheese",
+      "harga": 5000,
+      "deskripsi": "Treat your taste buds to mochi wrapped in rich cream cheese, topped with Oreo for a unique and delectable flavor experience.",
+      "thumbnail": "Mangga.jpg"
+    },
+    {
+      "id": 5,
+      "nama": "Taro",
+      "harga": 5000,
+      "deskripsi": "Savor the delight of mochi with a smooth and creamy taro filling, enhanced with Oreo topping that adds texture and impressive taste.",
+      "thumbnail": "Mangga.jpg"
+    },
+    {
+      "id": 6,
+      "nama": "Strawberry Cream",
+      "harga": 5000,
+      "deskripsi": "Enjoy the sensation of soft mochi with sweet strawberry cream filling, complemented by Oreo topping that adds a refreshing extra flavor.",
+      "thumbnail": "Mangga.jpg"
+    },
+    {
+      "id": 7,
+      "nama": "Mango Cream",
+      "harga": 5000,
+      "deskripsi": "Experience the pleasure of mochi with tropical and delicious mango cream filling, paired with Oreo topping for a new and delightful taste.",
+      "thumbnail": "Mangga.jpg"
+    },
+    {
+      "id": 8,
+      "nama": "Blueberry",
+      "harga": 5000,
+      "deskripsi": "Relish mochi with fresh and sweet blueberry filling, balanced with Oreo topping that provides a pleasant and distinct flavor touch.",
+      "thumbnail": "Mangga.jpg"
+    },
+    {
+      "id": 9,
+      "nama": "Durian",
+      "harga": 5000,
+      "deskripsi": "Taste the uniqueness of mochi with rich and aromatic durian filling, combined with Oreo topping for an exotic and flavorful combination.",
+      "thumbnail": "Mangga.jpg"
+    }
+  ],
+  "bahasa": [
+    {
+      "id": 1,
+      "nama": "Strawberry Cream",
+      "harga": 5000,
+      "deskripsi": "Nikmati kelembutan mochi dengan isian krim stroberi yang segar dan manis, dipadukan dengan rasa coklat yang lembut di setiap gigitan.",
+      "thumbnail": "Mangga.jpg"
+    },
+    {
+      "id": 2,
+      "nama": "Oreo",
+      "harga": 5000,
+      "deskripsi": "Cicipi kelezatan mochi yang kaya dengan potongan Oreo yang renyah di dalamnya, diselimuti oleh lapisan coklat yang creamy dan menggugah selera.",
+      "thumbnail": "Mangga.jpg"
+    },
+    {
+      "id": 3,
+      "nama": "Red Velvet",
+      "harga": 5000,
+      "deskripsi": "Rasakan kemewahan mochi dengan isian krim coklat yang meleleh di mulut, dipadukan dengan sentuhan red velvet yang lembut dan menggoda.",
+      "thumbnail": "Mangga.jpg"
+    },
+    {
+      "id": 4,
+      "nama": "Cream Cheese",
+      "harga": 5000,
+      "deskripsi": "Manjakan lidah Anda dengan mochi yang dibalut krim keju yang kaya rasa, ditambahkan dengan topping Oreo untuk pengalaman rasa yang unik dan menggugah selera.",
+      "thumbnail": "Mangga.jpg"
+    },
+    {
+      "id": 5,
+      "nama": "Taro",
+      "harga": 5000,
+      "deskripsi": "Nikmati kelezatan mochi dengan isian taro yang lembut dan creamy, disempurnakan dengan topping Oreo yang menambah tekstur dan rasa yang mengesankan.",
+      "thumbnail": "Mangga.jpg"
+    },
+    {
+      "id": 6,
+      "nama": "Strawberry Cream",
+      "harga": 5000,
+      "deskripsi": "Cicipi sensasi mochi yang lembut dengan isian krim stroberi yang manis, diiringi oleh topping Oreo yang memberikan rasa tambahan yang menyegarkan.",
+      "thumbnail": "Mangga.jpg"
+    },
+    {
+      "id": 7,
+      "nama": "Mango Cream",
+      "harga": 5000,
+      "deskripsi": "Rasakan kenikmatan mochi dengan isian krim mangga yang tropis dan lezat, dipadukan dengan topping Oreo yang memberikan rasa baru dan menyenangkan.",
+      "thumbnail": "Mangga.jpg"
+    },
+    {
+      "id": 8,
+      "nama": "Blueberry",
+      "harga": 5000,
+      "deskripsi": "Nikmati mochi dengan isian blueberry yang segar dan manis, diimbangi dengan topping Oreo yang memberikan sentuhan rasa yang menyenangkan dan berbeda.",
+      "thumbnail": "Mangga.jpg"
+    },
+    {
+      "id": 9,
+      "nama": "Durian",
+      "harga": 5000,
+      "deskripsi": "Cicipi keunikan mochi dengan isian durian yang kaya rasa dan beraroma, dipadukan dengan topping Oreo untuk kombinasi rasa yang eksotis dan menggugah selera.",
+      "thumbnail": "Mangga.jpg"
+    }
+  ]
+}

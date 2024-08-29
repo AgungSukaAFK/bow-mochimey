@@ -1,0 +1,228 @@
+@import "@/mixin.scss";
+
+.c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  &__w {
+    padding: 20px;
+    background-color: var(--background);
+    border-radius: 5px;
+    display: flex;
+    gap: 20px;
+    min-height: fit-content;
+    height: 450px;
+    &__left {
+      border-radius: 5px;
+      overflow: hidden;
+      width: 400px;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &__right {
+      width: 400px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      &__name {
+        font-size: 1.2rem;
+        font-weight: 800;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button {
+          font-size: 0.875rem;
+          font-weight: 400;
+          background-color: var(--border);
+          color: var(--background);
+          padding: 3px 10px;
+          border-radius: 5px;
+          cursor: pointer;
+          &:hover {
+            filter: brightness(0.8);
+          }
+        }
+      }
+      &__desc {
+        flex-grow: 1;
+        overflow-y: auto;
+        line-height: 1.6rem;
+      }
+      &__price {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      &__add {
+        width: 100%;
+        button {
+          width: 100%;
+          background-color: var(--border);
+          color: var(--background);
+          font-size: 1.2rem;
+          border: none;
+          outline: none;
+          font-weight: 400;
+          border-radius: 5px;
+          padding: 10px;
+          cursor: pointer;
+          transition: 0.2s ease;
+          filter: brightness(1);
+          &:hover {
+            filter: brightness(0.8);
+          }
+        }
+      }
+      &__message {
+        font-size: 0.875rem;
+        text-align: center;
+        font-weight: 400;
+        font-style: italic;
+        transform-origin: bottom center;
+        animation: scaleup 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes scaleup {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@include break(sm) {
+  .c {
+    &__w {
+      height: 350px;
+      &__left {
+        width: 300px;
+        height: 300px;
+      }
+      &__right {
+        width: 300px;
+      }
+    }
+  }
+}
+
+@include break(xs) {
+  .c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    &__w {
+      padding: 20px;
+      background-color: var(--background);
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 90%;
+      height: auto;
+      max-height: 90%;
+      &__left {
+        border-radius: 5px;
+        overflow: hidden;
+        width: 100%;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &__right {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        &__name {
+          font-size: 1.2rem;
+          font-weight: 800;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          button {
+            font-size: 0.875rem;
+            font-weight: 400;
+            background-color: var(--border);
+            color: var(--background);
+            padding: 3px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            &:hover {
+              filter: brightness(0.8);
+            }
+          }
+        }
+        &__desc {
+          flex-grow: 1;
+          max-height: 40%;
+          overflow-y: auto;
+          line-height: 1.6rem;
+        }
+        &__price {
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+        &__add {
+          width: 100%;
+          button {
+            width: 100%;
+            background-color: var(--border);
+            color: var(--background);
+            font-size: 1.2rem;
+            border: none;
+            outline: none;
+            font-weight: 400;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            transition: 0.2s ease;
+            filter: brightness(1);
+            &:hover {
+              filter: brightness(0.8);
+            }
+          }
+        }
+        &__message {
+          font-size: 0.875rem;
+          text-align: center;
+          font-weight: 400;
+          font-style: italic;
+          transform-origin: bottom center;
+          animation: scaleup 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+}
