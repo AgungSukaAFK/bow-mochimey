@@ -9,6 +9,7 @@ import { useContext, useEffect, useState } from "react";
 import DetailProduct from "../DetailProduct";
 import { LangContext } from "@/context/LangContext";
 import SectionHeader from "@/component/ui/SectionHeader";
+import SectionDescription from "@/component/ui/SectionDescription";
 
 export default function Menu() {
   // const [dataMochi, setDataMochi] = useState([]);
@@ -21,7 +22,7 @@ export default function Menu() {
     Aos.init({
       duration: 500,
       easing: "ease-in-out",
-      //   once: true,
+      once: true,
     });
   }, []);
 
@@ -32,12 +33,12 @@ export default function Menu() {
       )}
       <div className={s.c} id="menu">
         <SectionHeader>Menu MochiMey</SectionHeader>
-        <div className={s.c__desc}>
+        <SectionDescription>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil soluta
           delectus nesciunt labore amet fugiat animi magnam culpa ipsa assumenda
           molestias similique, unde, illum asperiores consequuntur? Facilis quas
           necessitatibus nulla!
-        </div>
+        </SectionDescription>
         <div className={s.c__w}>
           {dataMochi.map((mochi, index) => {
             return (

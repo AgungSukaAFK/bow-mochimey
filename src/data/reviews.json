@@ -1,0 +1,30 @@
+{
+  "bahasa": [
+    {
+      "nama": "John Doe",
+      "thumbnail": "Mangga.jpg",
+      "desc": "lorem ipsum dolor sit amet adipasicing alit",
+      "rating": 4
+    },
+    {
+      "nama": "John Doe",
+      "thumbnail": "Mangga.jpg",
+      "desc": "lorem ipsum dolor sit amet adipasicing alit",
+      "rating": 4
+    }
+  ],
+  "english": [
+    {
+      "nama": "John English",
+      "thumbnail": "Mangga.jpg",
+      "desc": "lorem ipsum dolor sit amet adipasicing alit",
+      "rating": 4
+    },
+    {
+      "nama": "John English",
+      "thumbnail": "Mangga.jpg",
+      "desc": "lorem ipsum dolor sit amet adipasicing alit",
+      "rating": 4
+    }
+  ]
+}

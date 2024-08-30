@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
+    "@types/nodemailer": "^6.4.15",
     "@types/react": "^18.3.4",
     "eslint": "^8",
     "eslint-config-next": "14.2.6"
