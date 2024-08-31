@@ -5,6 +5,7 @@ import Menu from "@/component/template/Menu";
 import About from "@/component/template/About";
 import Divider from "@/component/ui/Divider";
 import Contact from "@/component/template/Contact";
+import Footer from "@/component/template/Footer";
 
 export default function HomeView() {
   return (
@@ -15,6 +16,7 @@ export default function HomeView() {
       <About />
       <Divider />
       <Contact />
+      <Footer />
     </div>
   );
 }

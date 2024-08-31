@@ -2,8 +2,8 @@ import { sendEmail } from "@/lib/nodemailer";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
-  const { email, name, message, key } = await request.json();
-  if (!email || !name || !message) {
+  const { email, name, message, nohp, key } = await request.json();
+  if (!email || !name || !message || !nohp) {
     return NextResponse.json({
       status: 400,
       message: "Field not complete",
@@ -20,6 +20,7 @@ export async function POST(request) {
     fromEmail: email,
     fromName: name,
     message: message,
+    nohp: nohp,
   });
 
   if (res === "Success") {

@@ -1,0 +1,51 @@
+.wrapper {
+  display: flex;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: var(--color);
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+}
+
+.container {
+  --uib-size: 50px;
+  --uib-color: var(--background);
+  --uib-speed: 0.9s;
+  --uib-bg-opacity: 0.1;
+  height: var(--uib-size);
+  width: var(--uib-size);
+  transform-origin: center;
+  overflow: visible;
+}
+
+.car {
+  fill: none;
+  stroke: var(--uib-color);
+  stroke-dasharray: 15, 85;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: travel var(--uib-speed) linear infinite;
+  will-change: stroke-dasharray, stroke-dashoffset;
+  transition: stroke 0.5s ease;
+}
+
+.track {
+  stroke: var(--uib-color);
+  opacity: var(--uib-bg-opacity);
+  transition: stroke 0.5s ease;
+}
+
+@keyframes travel {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 100;
+  }
+}

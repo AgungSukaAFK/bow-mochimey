@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-async function sendEmail({ fromEmail, message, fromName }) {
+async function sendEmail({ fromEmail, message, fromName, nohp }) {
   try {
     // Create a transporter object
     let transporter = nodemailer.createTransport({
@@ -14,8 +14,8 @@ async function sendEmail({ fromEmail, message, fromName }) {
     // Set the email options
     let mailOptions = {
       from: `${fromEmail}`,
-      to: "wismaagung23@gmail.com",
-      subject: `Name: ${fromName}, from email: ${fromEmail}`,
+      to: "devitaaura910@gmail.com",
+      subject: `Name: ${fromName}, from email: ${fromEmail}, nohp: ${nohp}`,
       text: `${message}`,
     };
 
