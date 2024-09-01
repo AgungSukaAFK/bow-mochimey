@@ -2,14 +2,19 @@
 import SectionHeader from "@/component/ui/SectionHeader";
 import s from "./index.module.scss";
 import SectionDescription from "@/component/ui/SectionDescription";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import LoadingOverlay from "@/component/ui/Loading";
 import { emailServices } from "@/service/email";
+import { LangContext } from "@/context/LangContext";
+import t from "@/data/text.json";
 
 export default function Contact() {
   const [isLoading, setIsLoading] = useState(null);
   const [alert, setAlert] = useState(null);
   const formRef = useRef(null);
+
+  const { lang } = useContext(LangContext);
+  const text = t[lang];
 
   async function formSubmitHandler(e) {
     e.preventDefault();
@@ -47,11 +52,8 @@ export default function Contact() {
   return (
     <div className={s.c} id="contact">
       <LoadingOverlay isLoading={isLoading} />
-      <SectionHeader>Contact</SectionHeader>
-      <SectionDescription>
-        Hubungi saya melalui email dengan form dibawah, atau temui langsung di
-        lokasi penjualan pada maps berikut. Jam operasional bervariasi
-      </SectionDescription>
+      <SectionHeader>{text.contactHeader}</SectionHeader>
+      <SectionDescription>{text.contactDesc}</SectionDescription>
       <div className={s.c__w}>
         <div className={s.c__w__left}>
           <form
@@ -59,36 +61,38 @@ export default function Contact() {
             ref={formRef}
             onSubmit={formSubmitHandler}
           >
-            <div className={s.c__w__left__form__title}>Kirim Email</div>
+            <div className={s.c__w__left__form__title}>
+              {text.contactFormHeader}
+            </div>
             <div className={s.c__w__left__form__w}>
-              <label htmlFor="name">Nama</label>
+              <label htmlFor="name">{text.contactFormNama}</label>
               <input
                 type="text"
                 name="name"
                 id="name"
-                placeholder="Nama Pengirim ..."
+                placeholder={text.placeholderNama}
               />
             </div>
             <div className={s.c__w__left__form__w}>
-              <label htmlFor="nohp">Nomor handphone</label>
+              <label htmlFor="nohp">{text.contactFormNohp}</label>
               <input
                 type="text"
                 name="nohp"
                 id="nohp"
-                placeholder="Nomor handphone ..."
+                placeholder={text.placeholderNohp}
               />
             </div>
             <div className={s.c__w__left__form__w}>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">{text.contactFormEmail}</label>
               <input
                 type="email"
                 name="email"
                 id="email"
-                placeholder="Email Pengirim ..."
+                placeholder={text.placeholderEmail}
               />
             </div>
             <div className={s.c__w__left__form__w}>
-              <label htmlFor="message">Pesan</label>
+              <label htmlFor="message">{text.contactFormMessage}</label>
               <textarea name="message" id="message" rows={3}></textarea>
             </div>
             <button type="submit" className={s.c__w__left__form__button}>

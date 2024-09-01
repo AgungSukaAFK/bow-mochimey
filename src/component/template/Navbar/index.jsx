@@ -1,10 +1,14 @@
 "use client";
 
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import s from "./index.module.scss";
+import text from "@/data/text.json";
+import { LangContext } from "@/context/LangContext";
 
 export default function Navbar() {
   const navsRef = useRef(null);
+  const { lang, setLang } = useContext(LangContext);
+  const t = text[lang];
 
   const hamburgerHandler = () => {
     const navStyle = navsRef.current.style;
@@ -18,6 +22,15 @@ export default function Navbar() {
     }
   };
 
+  const toggleLang = () => {
+    console.log(lang);
+    if (lang === "bahasa") {
+      setLang("english");
+    } else {
+      setLang("bahasa");
+    }
+  };
+
   return (
     <div className={s.c}>
       <div className={s.c__w}>
@@ -26,17 +39,17 @@ export default function Navbar() {
         </div>
         <div className={s.c__w__navs} ref={navsRef}>
           <div className={s.c__w__navs__nav}>
-            <a href="#home">Home</a>
-            <a href="#menu">Menu</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="#home">{t.home}</a>
+            <a href="#menu">{t.menu}</a>
+            <a href="#about">{t.about}</a>
+            <a href="#contact">{t.contact}</a>
           </div>
           <div className={s.c__w__navs__option}>
             <div className={s.c__w__navs__option__cart}>
               <i className="bx bx-cart"></i>
             </div>
-            <div className={s.c__w__navs__option__lang}>
-              <i className="bx bx-world"></i> Bahasa
+            <div className={s.c__w__navs__option__lang} onClick={toggleLang}>
+              <i className="bx bx-world"></i> {t.language}
             </div>
           </div>
         </div>

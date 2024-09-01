@@ -1,10 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import s from "./index.module.scss";
+import text from "@/data/text.json";
+import { useContext } from "react";
+import { LangContext } from "@/context/LangContext";
 
 export default function Jumbotron() {
+  const { lang } = useContext(LangContext);
+  const t = text[lang];
+
   return (
     <div className={s.c} id="home">
-      <div className={s.c__h}>DAIFUKU MOCHI LEMBUT, MANIS DAN LEZAT!</div>
+      <div className={s.c__h}>{t.headerHome}</div>
       <div className={s.c__main}>
         <Image
           src={"/Mochimey-transparent.png"}
@@ -30,7 +38,7 @@ export default function Jumbotron() {
             <div className={s.c__main__mochi__text__desc}>by Devita</div>
           </div>
           <a href="#menu" className={s.c__main__mochi__button}>
-            Lihat Menu Kami
+            {t.homeButton}
           </a>
         </div>
       </div>

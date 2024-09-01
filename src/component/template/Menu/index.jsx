@@ -4,6 +4,7 @@ import s from "./index.module.scss";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import products from "@/data/product.json";
+import text from "@/data/text.json";
 
 import { useContext, useEffect, useState } from "react";
 import DetailProduct from "../DetailProduct";
@@ -17,6 +18,7 @@ export default function Menu() {
   const { lang } = useContext(LangContext);
 
   const dataMochi = products[lang];
+  const t = text[lang];
 
   useEffect(() => {
     Aos.init({
@@ -32,13 +34,8 @@ export default function Menu() {
         <DetailProduct data={selectedMenu} setData={setSelectedMenu} />
       )}
       <div className={s.c} id="menu">
-        <SectionHeader>Menu MochiMey</SectionHeader>
-        <SectionDescription>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil soluta
-          delectus nesciunt labore amet fugiat animi magnam culpa ipsa assumenda
-          molestias similique, unde, illum asperiores consequuntur? Facilis quas
-          necessitatibus nulla!
-        </SectionDescription>
+        <SectionHeader>{t.menuTitle}</SectionHeader>
+        <SectionDescription>{t.menuDesc}</SectionDescription>
         <div className={s.c__w}>
           {dataMochi.map((mochi, index) => {
             return (
@@ -65,7 +62,7 @@ export default function Menu() {
                 </div>
                 <div className={s.c__w__card__buttons}>
                   <button className={s.c__w__card__buttons__cart}>
-                    <i className="bx bx-cart-download"></i> Tambah ke keranjang
+                    <i className="bx bx-cart-download"></i> {t.menuCart}
                   </button>
                   <button
                     className={s.c__w__card__buttons__detail}

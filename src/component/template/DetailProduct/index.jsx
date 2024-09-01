@@ -5,8 +5,6 @@ import { useState } from "react";
 
 export default function DetailProduct({ data, setData }) {
   const [message, setMessage] = useState(null);
-
-  console.log(data);
   const closeHandler = () => {
     setData(null);
     document.body.style.overflow = "auto";
