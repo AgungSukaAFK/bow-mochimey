@@ -1,0 +1,63 @@
+.c {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  translate: -50% 0;
+  width: 75%;
+  max-width: 500px;
+  max-height: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 11;
+  border-left: 4px solid var(--border);
+  background-color: var(--alternate);
+  color: var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: toast 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &__wrapper {
+    width: 100%;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      height: 3px;
+      background-color: var(--border);
+      animation: progress 4s ease-out;
+    }
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    i {
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+  }
+  &__message {
+    font-size: 1rem;
+    overflow: auto;
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@keyframes toast {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: 20px;
+  }
+}

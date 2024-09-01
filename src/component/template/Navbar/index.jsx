@@ -1,16 +1,29 @@
 "use client";
 
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import s from "./index.module.scss";
 import text from "@/data/text.json";
 import { LangContext } from "@/context/LangContext";
+import Order from "../Order";
 
 export default function Navbar() {
   const navsRef = useRef(null);
-  const { lang, setLang } = useContext(LangContext);
+  const { lang, setLang, cart } = useContext(LangContext);
   const t = text[lang];
+  const [openCart, setOpenCart] = useState(false);
+
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let totalQty = 0;
+    cart.forEach((item) => {
+      totalQty += item.qty;
+    });
+    setCount(totalQty);
+  }, [cart]);
 
   const hamburgerHandler = () => {
+    setOpenCart(false);
     const navStyle = navsRef.current.style;
 
     if (navStyle.opacity === "1") {
@@ -23,7 +36,6 @@ export default function Navbar() {
   };
 
   const toggleLang = () => {
-    console.log(lang);
     if (lang === "bahasa") {
       setLang("english");
     } else {
@@ -45,8 +57,16 @@ export default function Navbar() {
             <a href="#contact">{t.contact}</a>
           </div>
           <div className={s.c__w__navs__option}>
-            <div className={s.c__w__navs__option__cart}>
+            <div
+              className={s.c__w__navs__option__cart}
+              onClick={() => setOpenCart((prev) => !prev)}
+            >
               <i className="bx bx-cart"></i>
+              {count > 0 && (
+                <div className={s.c__w__navs__option__cart__count}>
+                  {count > 9 ? "9+" : count}
+                </div>
+              )}
             </div>
             <div className={s.c__w__navs__option__lang} onClick={toggleLang}>
               <i className="bx bx-world"></i> {t.language}
@@ -57,6 +77,7 @@ export default function Navbar() {
           <i className="bx bx-menu" onClick={hamburgerHandler}></i>
         </div>
       </div>
+      <Order openCart={openCart} setOpenCart={setOpenCart} />
     </div>
   );
 }

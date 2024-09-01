@@ -54,6 +54,18 @@
           justify-content: center;
           background-color: var(--accent);
           border-radius: 5px;
+          position: relative;
+          &__count {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: var(--border);
+            color: var(--background);
+            font-size: 0.8rem;
+            border-radius: 50%;
+            padding: 1px 5px;
+            translate: -50% -50%;
+          }
         }
         &__lang {
           flex-grow: 1;

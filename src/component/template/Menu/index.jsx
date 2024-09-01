@@ -11,14 +11,23 @@ import DetailProduct from "../DetailProduct";
 import { LangContext } from "@/context/LangContext";
 import SectionHeader from "@/component/ui/SectionHeader";
 import SectionDescription from "@/component/ui/SectionDescription";
+import Toast from "@/component/ui/Toast";
 
 export default function Menu() {
   // const [dataMochi, setDataMochi] = useState([]);
   const [selectedMenu, setSelectedMenu] = useState(null);
-  const { lang } = useContext(LangContext);
+  const { lang, cart, setCart } = useContext(LangContext);
+
+  const [toast, setToast] = useState(null);
 
   const dataMochi = products[lang];
   const t = text[lang];
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (toast) setToast(null);
+    }, 4500);
+  }, [toast]);
 
   useEffect(() => {
     Aos.init({
@@ -28,8 +37,31 @@ export default function Menu() {
     });
   }, []);
 
+  function addCartHandler(item) {
+    // Cek dulu apakah sudah ada di cart
+    setToast(true);
+    const itemInCartIndex = cart.findIndex((data) => data.id === item.id);
+
+    if (itemInCartIndex > -1) {
+      // Sudah ada, tambah qty
+      const updatedCart = [...cart];
+      updatedCart[itemInCartIndex].qty += 1;
+      setCart(updatedCart);
+    } else {
+      // Tidak ada
+      delete item?.deskripsi;
+      item.qty = 1;
+      setCart((prev) => [...prev, item]);
+    }
+  }
+
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
+
   return (
     <>
+      {toast && <Toast message={"Menu berhasil ditambahkan!"} />}
       {selectedMenu && (
         <DetailProduct data={selectedMenu} setData={setSelectedMenu} />
       )}
@@ -61,7 +93,11 @@ export default function Menu() {
                   Rp. {mochi.harga.toLocaleString("id-ID")}
                 </div>
                 <div className={s.c__w__card__buttons}>
-                  <button className={s.c__w__card__buttons__cart}>
+                  <button
+                    type="button"
+                    className={s.c__w__card__buttons__cart}
+                    onClick={() => addCartHandler(mochi)}
+                  >
                     <i className="bx bx-cart-download"></i> {t.menuCart}
                   </button>
                   <button
