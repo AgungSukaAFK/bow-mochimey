@@ -63,7 +63,11 @@ export default function Menu() {
     <>
       {toast && <Toast message={"Menu berhasil ditambahkan!"} />}
       {selectedMenu && (
-        <DetailProduct data={selectedMenu} setData={setSelectedMenu} />
+        <DetailProduct
+          data={selectedMenu}
+          setData={setSelectedMenu}
+          addItem={() => addCartHandler(selectedMenu)}
+        />
       )}
       <div className={s.c} id="menu">
         <SectionHeader>{t.menuTitle}</SectionHeader>

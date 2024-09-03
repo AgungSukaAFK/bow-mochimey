@@ -3,7 +3,7 @@ import Image from "next/image";
 import s from "./index.module.scss";
 import { useState } from "react";
 
-export default function DetailProduct({ data, setData }) {
+export default function DetailProduct({ data, setData, addItem }) {
   const [message, setMessage] = useState(null);
   const closeHandler = () => {
     setData(null);
@@ -41,9 +41,10 @@ export default function DetailProduct({ data, setData }) {
           </div>
           <div className={s.c__w__right__add}>
             <button
-              onClick={() =>
-                setMessage("Produk berhasil ditambahkan ke keranjang")
-              }
+              onClick={() => {
+                addItem();
+                setMessage("Produk berhasil ditambahkan ke keranjang");
+              }}
             >
               Tambahkan ke keranjang
             </button>

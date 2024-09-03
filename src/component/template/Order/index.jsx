@@ -22,10 +22,14 @@ export default function Order({ openCart, setOpenCart }) {
     setOpenCart(false);
   }
 
-  function calculateTotal(cart) {
-    return cart.reduce((total, item) => {
-      return total + item.qty * item.harga;
-    }, 0);
+  function calculateTotal(data) {
+    let totalPrice = 0;
+    console.log(data);
+    data.forEach((item) => {
+      totalPrice += item.harga * item.qty;
+      console.log(item);
+    });
+    return totalPrice;
   }
 
   function checkoutHandler() {
@@ -40,9 +44,9 @@ Metode pemesanan: ${method}\n
 -- Detail Pesanan --
 ${cart
   .map((order) => {
-    return `${order.qty}x ${order.nama} @Rp. ${(
-      order.harga * order.qty
-    ).toLocaleString("id-ID")}\n`;
+    return `${order.qty}x ${order.nama} @Rp. ${order.harga.toLocaleString(
+      "id-ID"
+    )}\n`;
   })
   .join("")}
 -- Total Harga --
